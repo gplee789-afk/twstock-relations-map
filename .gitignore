@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# 抓下來的第三方資料與產生的報表：著作權屬原網站，不放進版本庫
+data/
+reports/
+*.log
+
+# 本機設定
+.claude/settings.local.json
+.DS_Store
+Thumbs.db
