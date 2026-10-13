@@ -19,11 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
----
-
-This license covers the source code in this repository only. Data fetched by
-the software from third-party websites (MoneyDJ, TWSE, TPEx, the Government
-e-Procurement System and its g0v mirror, news publishers, etc.) remains the
-property of its respective owners and is NOT licensed under these terms.
-See the "免責聲明" and "著作權與資料來源" sections of README.md.
