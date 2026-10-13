@@ -137,6 +137,8 @@ svg#map.dragging { cursor: grabbing; }
 .dock #zlabel { min-width: 46px; text-align: center; font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
 #hint { position: absolute; left: 16px; top: 14px; font-size: 12px; color: var(--muted); pointer-events: none; line-height: 1.7; }
 #hint b { color: var(--ink2); font-weight: 600; }
+#credit { position: absolute; left: 16px; bottom: 16px; max-width: calc(50% - 150px); font-size: 11px; color: var(--muted); line-height: 1.6; }
+#credit a { color: inherit; }
 #msg { position: absolute; left: 50%; top: 14px; transform: translateX(-50%); background: var(--ink); color: var(--surface);
   font-size: 12.5px; padding: 6px 14px; border-radius: 999px; box-shadow: var(--shadow-lg); opacity: 0; transition: opacity .2s; pointer-events: none; z-index: 4; white-space: nowrap; }
 #msg.show { opacity: 1; }
@@ -202,6 +204,7 @@ svg#map.dragging { cursor: grabbing; }
   header { padding: 10px 16px; gap: 8px 12px; }
   .chips { margin-left: 0; }
   #hint { display: none; }
+  #credit { top: 10px; bottom: auto; max-width: none; right: 16px; }
   #panel { top: auto; bottom: 0; left: 0; right: 0; width: auto; max-height: 55%; border-radius: 16px 16px 0 0; transform: translateY(16px); }
   .p-head { border-radius: 16px 16px 0 0; }
   .dock { bottom: 12px; }
@@ -233,6 +236,7 @@ svg#map.dragging { cursor: grabbing; }
     </svg>
     <div id="hint"><b>⊕</b> 往外展開 · <b>點</b> 看細節 · <b>雙擊</b> 換中心<br>滑鼠停在公司上，標出它在圖上的所有位置</div>
     <div id="msg" role="status"></div>
+    <div id="credit">不是投資建議 · 資料日期 <span id="dataDate"></span>，可能不完整或過時 · 關係資料著作權屬 MoneyDJ、證交所、櫃買中心、公開資訊觀測站、政府電子採購網等原來源 · <a href="https://github.com/gplee789-afk/twstock-relations-map#免責聲明" target="_blank" rel="noopener">免責聲明與原始碼</a></div>
     <div class="dock">
       <button class="sq" id="zout" aria-label="縮小">−</button>
       <span id="zlabel">100%</span>
@@ -764,6 +768,7 @@ document.getElementById("collapseAll").onclick = () => { state.expanded.clear();
 addEventListener("keydown", ev => { if (ev.key === "Escape") select(null); });
 let rt; addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(() => fit(false), 150); });
 
+document.getElementById("dataDate").textContent = D.generated;
 const start = decodeURIComponent(location.hash.slice(1));
 recenter(D.companies[start] ? start : D.roots[0], false);
 </script>
