@@ -21,7 +21,15 @@
 
 本版本庫**只有程式碼**，不含任何抓下來的資料或產生的報表（`data/`、`reports/` 都在 `.gitignore` 裡），第一次執行時會自己抓。
 
-## 安裝
+## 雙擊使用（Windows）
+
+1. 先裝 [Python 3.10 以上](https://www.python.org/downloads/)，安裝時勾「Add python.exe to PATH」
+2. 解壓縮後雙擊 `開啟心智圖.bat`：第一次會自動建 `.venv`、安裝套件（約一分鐘）
+3. 輸入代號或公司簡稱（多個用空白隔開，例如 `2330 台泥`），跑完會自動用瀏覽器打開心智圖；直接按 Enter 結束
+
+也可以在命令列帶參數，會原樣轉給 `relations.py`，例如 `開啟心智圖.bat 2330 --depth 2`。
+
+## 安裝（命令列）
 
 ```
 python -m venv .venv
@@ -110,6 +118,7 @@ python -m venv .venv
 - `llm_rel.py`：用本機 LLM 從新聞標題、法說會簡報抽取供應／合作關係
 - `relations.html`：心智圖頁面樣板（資料會塞進 `/*__DATA__*/null` 的位置）
 - `news_body.py`：抓新聞內文（供 `llm_rel.py` 使用）
+- `開啟心智圖.bat`、`start.py`：雙擊啟動、輸入代號、自動打開產生的心智圖
 
 `capex.py`、`llm_rel.py`、`news_body.py` 讀的是另一個專案 supply-chain-radar 的 `radar.db`／`backtest.db`（預設路徑是本專案旁邊的 `../supply-chain-radar/data/`），該專案不在本版本庫內；沒有這些資料庫時，用 `--skip-capex --skip-contract --skip-llm` 跳過即可。
 

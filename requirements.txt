@@ -1,4 +1,5 @@
 requests>=2.31
 googlenewsdecoder>=0.1.7
 trafilatura>=2.0
+lxml_html_clean  # trafilatura 用的 justext 需要；lxml 6 起拆成獨立套件，不會自動裝
 selectolax<1.0   # googlenewsdecoder 0.2.1 要 Modest 後端，selectolax 1.0 已移除

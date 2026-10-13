@@ -1,6 +1,8 @@
 @echo off
 rem Double-click to run. First run creates .venv and installs packages (needs Python 3.10+).
 cd /d "%~dp0"
+rem requirements.txt and the scripts are UTF-8; without this pip reads them as cp950 on Chinese Windows
+set PYTHONUTF8=1
 if not exist ".venv\Scripts\python.exe" (
   echo First run: creating Python environment, please wait...
   py -3 -m venv .venv 2>/dev/null || python -m venv .venv
